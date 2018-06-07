@@ -1,0 +1,12 @@
+.filter-categories {
+    list-style-type: none;
+}
+body {
+    background: rgb(240, 207, 207);
+}
+footer {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+}
+
