@@ -1,0 +1,21 @@
+STEPS ONE & TWO: USER INPUTS ADDRESSES INTO FORM, SUBMITS
+    - allow user to log in, access local storage (previous searches?)
+    - form logic (prevent default etc)
+    - convert to necessary format for AJAX call to MAPS API
+STEPS THREE & FOUR: DATA FROM USER SENT TO API, WAIT FOR MAGIC TO HAPPEN ON SERVER
+    - AJAX call (GET?)
+    - remember to include "default" radius of 3 mi (initial search radius from calculated center point between L1 & L2)
+STEPS FIVE & SIX: SERVER RETURNS BUCKET OF RESULTS, CONDITIONAL CHECK/FAIL
+    - set conditional statement: if BUCKET_RESULTS = 0, repeat steps 3 & 4 but increase search radius (how much? take original radius, reassign as larger number)
+STEP SEVEN: PASSES CONDITIONAL
+    - if results > 0, store results in DB 
+    - array of objects? properties need to match filter selections
+STEP EIGHT: FILTER RESULTS
+    - checkboxes/slider for results filtering. need to handle radius first
+    - *IF* API will return everything in radius "bucket", use jquery etc to show/hide results based on filter selections via DB (locally) if possible
+    - If not, will need to redo API calls with new parameters- not ideal! 
+STEP NINE: PROCEED TO RESULTS PAGE
+    - send checked/selected results (pass objects) to resultPage
+STEP TEN: DISPLAY RESULTS ON RESULTS PAGE, SEND TO EMAIL
+    - display results in (template?/maps format?)
+    - option to send to email address of choice
