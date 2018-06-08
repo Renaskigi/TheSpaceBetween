@@ -1,13 +1,24 @@
 /*header css  */
+h1 {
+  font-size: 24px;
+  text-align: center;
+}
 
+h3 {
+  font-size: 11px;
+  text-align: center;
+}
 /*main nav css*/
 #nav {
   display: flex;
 }
 
+.icon-menu {
+  font-size: 15px;
+}
+
 .main-nav {
-  padding: 30px;
-  width: 67%;
+  display: flex;
 }
 
 #menu-toggle {
@@ -41,13 +52,13 @@
 li {
   margin: auto;
   color: black;
-  font-size: 20px;
+  font-size: 13px;
   padding: 10px;
 }
 
 .main-nav a {
   padding: 5px;
-  font-size:  20px;
+  font-size:  13px;
   text-decoration: none;
   color: black;
   font-weight: bold;
@@ -62,6 +73,12 @@ button {
   text-align: center;
 }
 
+
+/*create account*/
+
+.account {
+  font-size: 15px;
+}
 .create-account {
   padding: 30px;
 }
@@ -90,11 +107,14 @@ button {
   transition: all 0.5s;
   padding: 0;
   margin: 0;
-
 }
 
 .create-account {
   text-align: center;
+}
+
+input#account-submit {
+    font-size: 15px;
 }
 
 /*form css*/
@@ -104,7 +124,8 @@ form {
 }
 
 input[type=text] {
-    width: 90%;
+  width: 69%;
+  height: 6px;
     padding: 12px 20px;
     margin: 8px 0;
     border: 1px solid black;
@@ -116,10 +137,6 @@ label  {
 }
 
 input {
-  font-size: 25px;
+  font-size: 15px;
   text-align: center;
-}
-
-#address input {
-  margin: 20px;
 }
