@@ -1,17 +1,24 @@
+const pg = require('pg');
+const fs = require('fs');
 const express = require('express');
-const app =  express();
-const bodyParser = require('body-parser').urlencoded({extended: true});
+const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
+const app = express();
+// const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT';
+const conString = 'postgres://postgres:Alchemy@localhost:5432/spacebetween';
+const client = new pg.Client(conString);
+client.connect();
+client.on('error', err => console.error(err));
 
-app.use( express.static( '.' ) );
+app.use( express.static( './Public' ) );
 
-app.get( '', function (request, response) {
-    response.sendFile( '/index.html', {root: '.'});
+app.get( '/', function (request, response) {
+    response.sendFile( 'index.html', {root: './Public'});
 });
 
 app.post('', bodyParser, function(request, response) {
     console.log(request.body);
-    response.send('Record posted to server!!');
+    response.send('Location posted to server!!');
 });
 
 app.listen(PORT, function() {
