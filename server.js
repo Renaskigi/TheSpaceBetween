@@ -16,6 +16,10 @@ app.get( '/', function (request, response) {
     response.sendFile( 'index.html', {root: './Public'});
 });
 
+app.get( '/mapPage', function (request, response) {
+    response.sendFile( 'mapPage.html', {root: './Public'});
+});
+
 app.post('', bodyParser, function(request, response) {
     console.log(request.body);
     response.send('Location posted to server!!');
