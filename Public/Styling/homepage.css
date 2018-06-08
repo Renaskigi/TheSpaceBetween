@@ -1,0 +1,83 @@
+/*header css  */
+
+/*main nav css*/
+.main-nav {
+  padding: 30px;
+  width: 50%;
+}
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked + #main-menu {
+  max-height: 110px;
+}
+
+.main-nav .icon-menu:hover + ul {
+  display: flex;
+}
+
+.main-nav ul {
+  display: left;
+  flex-direction: column;
+  list-style-type: none;
+  color: black;
+}
+
+.main-nav span {
+  display: none;
+}
+
+#main-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: auto;
+  color: black;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.main-nav a {
+  padding: 5px;
+  font-size:  20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+#nav-sections {
+  display: flex;
+}
+
+button {
+  background-color: transparent;
+  text-align: center;
+}
+
+/*form css*/
+
+form {
+  text-align: center;
+}
+
+input[type=text] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid black;
+    /* box-sizing: border-box; */
+}
+
+label  {
+  font-size: 30px;
+}
+
+input {
+  font-size: 25px;
+}
