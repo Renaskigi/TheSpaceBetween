@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="Public/Styling/icon.css">
     <link rel="stylesheet" href="Public/Styling/homepage.css">
@@ -13,23 +13,31 @@
     <h1>The Space Between</h1>
     <h3>Let us split the difference for you with your friends</h3>
   </header>
-    <nav class="main-nav">
-      <label class="icon-menu" for="menu-toggle"></label>
-      <input id="menu-toggle" type="checkbox">
-        <ul id="main-menu">
-          <li class="icon-home2"><a href="/" data-tab="home">Home</a></li>
-          <li class="icon-profile"><a href="/mapPage" data-tab="mapPage">Login</a></li>
-          <li class="icon-wrench"><a href="/resultPage" data-tab="resultPage">Settings</a></li>
-        </ul>
-    </nav>
+    <div id="nav">
+      <nav class="main-nav">
+        <label class="icon-menu" for="menu-toggle"></label>
+        <input id="menu-toggle" type="checkbox">
+          <ul id="main-menu">
+            <li class="icon-home2"><a href="/" data-tab="home">Home</a></li>
+            <li class="icon-profile"><a href="/mapPage" data-tab="mapPage">Login</a></li>
+            <li class="icon-wrench"><a href="/resultPage" data-tab="resultPage">Settings</a></li>
+          </ul>
+      </nav>
+      <div class="create-account">
+        <label class="account" for="form-toggle">Create Account</label>
+        <input id="form-toggle" type="checkbox">
+          <form id="account-form">
+            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="password" placeholder="Password">
+            <input id="account-submint" type="submit" value="Submit">
+          </form>
+        </div>
+  </div>
   <main>
     <section ="input-address">
-      <form id="address-one">
-        <input type="text" name="first">
-        <input type="submit" value="Submit">
-      </form>
-      <form id="address-two">
-        <input type="text" name="second">
+      <form id="address">
+        <input type="text" name="first" placeholder="Enter Address">
+        <input type="text" name="second" placeholder="Enter Address">
         <input type="submit" value="Submit">
       </form>
     </section>
