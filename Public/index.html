@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Styling/icon.css">
+    <link rel="stylesheet" href="Styling/homepage.css">
+    <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>The Space Between</h1>
+    <h3>Let us split the difference for you with your friends</h3>
+  </header>
+    <div id="nav">
+      <nav class="main-nav">
+        <label class="icon-menu" for="menu-toggle"></label>
+        <input id="menu-toggle" type="checkbox">
+          <ul id="main-menu">
+            <li class="icon-home2"><a href="/" data-tab="home">Home</a></li>
+            <li class="icon-profile"><a href="/mapPage" data-tab="mapPage">Login</a></li>
+            <li class="icon-wrench"><a href="/resultPage" data-tab="resultPage">Settings</a></li>
+          </ul>
+          <label class="account" for="form-toggle">Create Account</label>
+      </nav>
+    </div>
+      <div class="create-account">
+        <input id="form-toggle" type="checkbox">
+          <form id="account-form">
+            <input class="info" type="text" name="username" placeholder="Username">
+            <input class="info" type="text" name="password" placeholder="Password">
+            <input class="info" id="account-submit" type="submit" value="Submit">
+          </form>
+        </div>
+  </div>
+  <main>
+    <section ="input-address">
+      <form id="address">
+        <input class="addr" type="text" name="first" placeholder="Enter Address">
+        <input class="addr" type="text" name="second" placeholder="Enter Address">
+        <input class="addr" type="submit" value="Submit">
+      </form>
+    </section>
+  </main>
+</body>
+<script type="text/javascript" src="Scripts/Views/home.js"></script>
+<script type="text/javascript" src= "https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.8.6/page.min.js"></script>
+</html>
