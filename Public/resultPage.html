@@ -4,16 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="Public/Styling/base.css" type="text/css">
-    <link rel="stylesheet" href="Public/Styling/result.css" type="text/css">
-    <link rel="stylesheet" href="Public/Styling/fonts/style.css" type="text/css">
+    <link rel="stylesheet" href="Styling/base.css" type="text/css">
+    <link rel="stylesheet" href="Styling/result.css" type="text/css">
+    <link rel="stylesheet" href="Styling/fonts/style.css" type="text/css">
+    <link rel="stylesheet" href="Styling/icon.css">
+    <link rel="stylesheet" href="Styling/homepage.css">
     <title>The Space Between</title>
 </head>
 <body>
-    <h1>The Space Between</h1>
-    <h3>(Stalk from anywhere)</h3>
+    <header class="head-section">
+        <h1>The Space Between</h1>
+        <h3>Let us split the difference for you with your friends</h3>
+    </header>
+    <div id="nav">
+            <nav class="main-nav">
+              <label class="icon-menu" for="menu-toggle"></label>
+              <input id="menu-toggle" type="checkbox">
+                <ul id="main-menu">
+                  <li class="icon-home2"><a href="/" data-tab="home">Home</a></li>
+                  <li class="icon-profile"><a href="/mapPage" data-tab="mapPage">Login</a></li>
+                  <li class="icon-wrench"><a href="/resultPage" data-tab="resultPage">Settings</a></li>
+                </ul>
+                <label class="account" for="form-toggle">Create Account</label>
+            </nav>
+          </div>
+            <div class="create-account">
+              <input id="form-toggle" type="checkbox">
+                <form id="account-form">
+                  <input class="info" type="text" name="username" placeholder="Username">
+                  <input class="info" type="text" name="password" placeholder="Password">
+                  <input class="info" id="account-submit" type="submit" value="Submit">
+                </form>
+              </div>
+        </div>
+        <section>
+            <img src="Styling/fonts/samoyed1.jpeg">
+            <button type="button" name="select-location1">SELECT THIS LOCATION</button>
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_sms"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_telegram"></a>
+            </div>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+       </section>
 
-    
+        <section>
+            <img src="Styling/fonts/samoyed2.jpeg">
+            <button type="button" name="select-location1">SELECT THIS LOCATION</button>
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_sms"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_telegram"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>  
+        </section>
+
+        <section>
+            <img src="Styling/fonts/samoyed4.jpeg">
+            <button type="button" name="select-location1">SELECT THIS LOCATION</button>
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_sms"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_telegram"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>  
+        </section>
+  
+ 
         
 </body>
+    <script type="text/javascript" src="Scripts/Views/mapview.js"></script>
+    <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b1d6835b65c3300119df805&product=inline-share-buttons' async='async'></script>
 </html>
