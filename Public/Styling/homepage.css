@@ -140,3 +140,28 @@ input {
   font-size: 15px;
   text-align: center;
 }
+
+/*checkbox options*/
+form#checkbox-options {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+}
+
+form#checkbox-options label {
+  font-size: 19px;
+  float:left;
+}
+
+form#checkbox-options input {
+  font-size: 19px;
+  float:left;
+}
+
+#options {
+  margin-top: 10%
+}
+
+#options h5 {
+  text-align: center;
+}
