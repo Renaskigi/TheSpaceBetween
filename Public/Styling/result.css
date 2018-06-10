@@ -2,11 +2,27 @@
     list-style-type: none;
 }
 body {
-    background: rgb(240, 207, 207);
+    background: rgb(154, 191, 237);
 }
 footer {
    position: absolute;
    bottom: 0;
    width: 100%;
 }
+section.results-box {
+    border-style: ridge;
+}
+section.button {
+    display: inline;
+}
+button {
+    position: absolute;
+}
+section.div {
+    display: inline;
+}
 
+a2a_kit a2a_kit_size_32 a2a_default_style {
+    position: absolute;
+    display: inline;
+}

@@ -1,4 +1,9 @@
 /*header css  */
+header {
+  margin: 20px;
+  border: 1px solid black;
+  background-color: #b1dbf7;
+}
 h1 {
   font-size: 24px;
   text-align: center;
@@ -11,14 +16,13 @@ h3 {
 /*main nav css*/
 #nav {
   display: flex;
+  margin-left: 20px;
 }
 
 .icon-menu {
   font-size: 15px;
-}
-
-.main-nav {
-  display: flex;
+  border: 1px solid black;
+  background-color: #fbecac;
 }
 
 #menu-toggle {
@@ -77,8 +81,14 @@ button {
 /*create account*/
 
 .account {
+  float: right;
+  display: flex;
   font-size: 15px;
+  margin-right: 20px;
+  border: 1px solid black;
+  background-color: #fbecac;
 }
+
 .create-account {
   padding: 30px;
 }
@@ -138,5 +148,30 @@ label  {
 
 input {
   font-size: 15px;
+  text-align: center;
+}
+
+/*checkbox options*/
+form#checkbox-options {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+}
+
+form#checkbox-options label {
+  font-size: 19px;
+  float:left;
+}
+
+form#checkbox-options input {
+  font-size: 19px;
+  float:left;
+}
+
+#options {
+  margin-top: 10%
+}
+
+#options h5 {
   text-align: center;
 }
