@@ -3,7 +3,7 @@
 // $('.icon-menu').on('click', function(event) {
 //   $('.icon-menu').toggleClass('icon-cross');
 // })
-const API_KEY = 'AIzaSyD1rQRJPfneZQWdf0GsAqcjo_iv60b1J48';
+const API_KEY = 'AIzaSyC9RhI2XAtoSBUZXkxnbHrhojb2rhuufmM';
 const address = {};
 
 $('#address').submit(function(event) {
@@ -12,6 +12,9 @@ $('#address').submit(function(event) {
     address.second = $('#addr-second').val();
     console.log(address.first);
     console.log(address.second);
+    getCoordinates();
+
+    // computeDistanceBetween(address.firstCoordinates, address.secondCoordinates);
 });
 
 console.log(address.first);
@@ -21,10 +24,31 @@ function getCoordinates () {
         url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address.first}&key=${API_KEY}`,
         type: 'GET'
     })
-    .then(data =>address.firstCoordinates = data.results[0].geometry.location,
+    .then(data => address.firstCoordinates = data.results[0].geometry.location,
           err => console.log(err))
+    $.ajax({
+      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address.second}&key=${API_KEY}`,
+      type: 'GET'
+    })
+    .then(data => address.secondCoordinates = data.results[0].geometry.location,
+          err => console.log(err))
+    $.ajax({
+      url: `https://maps.googleapis.com/maps/api/directions/json?origin=${address.first}&destination=${address.second}&key=${API_KEY}`,
+      type: 'GET'
+    })
+    .then( 
+    {
+      origin: address.first,
+      destination: address.second,
+      provideRouteAlternatives: false,
+      travelMode: 'DRIVING',
+      drivingOptions: {
+        departureTime: new Date(/* now, or future date */),
+        trafficModel: 'pessimistic'
+      },
+      unitSystem: google.maps.UnitSystem.IMPERIAL
+    })
 }
-
 
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
