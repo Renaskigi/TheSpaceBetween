@@ -12,7 +12,7 @@ function initMap() {
   var firstStaticLocation = new google.maps.LatLng(address.firstCoordinates.lat,address.firstCoordinates.lng);
   var portland = new google.maps.LatLng(address.secondCoordinates.lat,address.secondCoordinates.lng);
   var mapOptions = {
-    zoom:17.5,
+    zoom: 17,
     center: firstStaticLocation
   }
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -34,9 +34,6 @@ function calcRoute(first, second, directionsDisplay, directionsService) {
   });
 }
 
-
-
-
 function getCoordinates () {
     $.ajax({
         url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address.first}&key=${API_KEY}`,
@@ -51,27 +48,10 @@ function getCoordinates () {
       .then(data => { 
         address.secondCoordinates = data.results[0].geometry.location;
         localStorage.setItem('coordinates', JSON.stringify(address));
-        // initMap();
     })
 })}
 
-
-    // .then( 
-    // {
-    //   origin: address.first,
-    //   destination: address.second,
-    //   provideRouteAlternatives: false,
-    //   travelMode: 'DRIVING',
-    //   drivingOptions: {
-    //     departureTime: new Date(/* now, or future date */),
-    //     trafficModel: 'pessimistic'
-    //   },
-    //   unitSystem: google.maps.UnitSystem.IMPERIAL
-    // })
-
-
-
-  $('#address').submit(function(event) {
+$('#address').submit(function(event) {
     event.preventDefault();
     address.first = $('#addr-first').val();
     address.second = $('#addr-second').val();
