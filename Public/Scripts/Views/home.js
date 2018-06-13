@@ -4,6 +4,7 @@ const API_KEY = 'AIzaSyC9RhI2XAtoSBUZXkxnbHrhojb2rhuufmM';
 let address = {};
 var url = window.location.href;
 var updatedUrl = url + "mapPage";
+let centerpoint;
 
 function initMap() {
   address = JSON.parse(localStorage.getItem('coordinates'));
@@ -18,6 +19,10 @@ function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   directionsDisplay.setMap(map);
   calcRoute(firstStaticLocation, portland, directionsDisplay, directionsService);
+  function midpoint(lat1, long1, lat2, long2) {
+    centerpoint = [lat1 + (lat2 - lat1) * .50, long1 + (long2 - long1) * .50];
+  }
+  midpoint(address.firstCoordinates.lat,address.firstCoordinates.lng, address.secondCoordinates.lat, address.secondCoordinates.lng);
 }
 
 function calcRoute(first, second, directionsDisplay, directionsService) {
@@ -48,6 +53,7 @@ function getCoordinates () {
       .then(data => { 
         address.secondCoordinates = data.results[0].geometry.location;
         localStorage.setItem('coordinates', JSON.stringify(address));
+        window.location = updatedUrl;
     })
 })}
 
@@ -56,5 +62,5 @@ $('#address').submit(function(event) {
     address.first = $('#addr-first').val();
     address.second = $('#addr-second').val();
     getCoordinates();
-    window.location = updatedUrl;
+    
 });
