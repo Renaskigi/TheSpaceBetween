@@ -21,7 +21,6 @@ function initMap() {
 }
 
 function calcRoute(first, second, directionsDisplay, directionsService) {
-
   var request = {
     origin: first,
     destination: second,
@@ -32,7 +31,29 @@ function calcRoute(first, second, directionsDisplay, directionsService) {
       directionsDisplay.setDirections(result);
     }
   });
+    var service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix({
+        origins: [first],
+        destinations: [second],
+        travelMode: google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+        avoidHighways: false,
+        avoidTolls: false
+    }, function (response, status) {
+        if (status == google.maps.DistanceMatrixStatus.OK && response.rows[0].elements[0].status != "ZERO_RESULTS") {
+            var distance = response.rows[0].elements[0].distance.text;
+            var duration = response.rows[0].elements[0].duration.text;
+            var dvDistance = document.getElementById("dvDistance");
+           dvDistance.innerHTML = "";
+            dvDistance.innerHTML += "Distance: " + distance + "<br />";
+            dvDistance.innerHTML += "Duration:" + duration;
+ 
+        } else {
+            alert("Unable to find the distance via road.");
+        }
+    });
 }
+
 
 function getCoordinates () {
     $.ajax({
@@ -48,6 +69,8 @@ function getCoordinates () {
       .then(data => { 
         address.secondCoordinates = data.results[0].geometry.location;
         localStorage.setItem('coordinates', JSON.stringify(address));
+      window.location = updatedUrl;
+
     })
 })}
 
@@ -56,5 +79,8 @@ $('#address').submit(function(event) {
     address.first = $('#addr-first').val();
     address.second = $('#addr-second').val();
     getCoordinates();
-    window.location = updatedUrl;
 });
+
+
+
+
