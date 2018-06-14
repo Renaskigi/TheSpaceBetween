@@ -1,6 +1,5 @@
 'use strict'
 
-const API_KEY = 'AIzaSyC9RhI2XAtoSBUZXkxnbHrhojb2rhuufmM';
 let address = {};
 var infowindow;
 var map;
@@ -27,7 +26,7 @@ function initMap() {
 
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
-    location: firstStaticLocation,
+    location: new google.maps.LatLng(centerpoint[0], centerpoint[1]),
     radius: 500,
     type: ['store']
   }, callback);
