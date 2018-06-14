@@ -23,7 +23,33 @@
       </style>
 </head>
 <body>
-    <div id="map"></div>
+    <!-- <div id="map"></div> -->
+
+    <table border="5px" cellpadding="10px" cellspacing="3">
+        <tr>
+            <td colspan="2">
+                <div id="dvDistance">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="map" style="width: 500px; height: 500px">
+                </div>
+            </td>
+            <td>
+                <div id="dvPanel" style="width: 500px; height: 500px">
+                </div>
+            </td>
+        </tr>
+        </table>
+
+
+
+
+
+
+
     <aside>
         <h2>Filter From:</h2>
         <ul class="filter-categories">
@@ -68,7 +94,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.8.6/page.min.js"></script>
     <script type="text/javascript" src= "Scripts/Views/home.js"></script>    
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9RhI2XAtoSBUZXkxnbHrhojb2rhuufmM&callback=initMap"
+    <script type="text/javascript" src= "Scripts/Views/places.js"></script>  
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9RhI2XAtoSBUZXkxnbHrhojb2rhuufmM&libraries=places&callback=initMap"
     type="text/javascript"></script>
     <script src="Scripts/Views/app.js"></script>
 </body>
