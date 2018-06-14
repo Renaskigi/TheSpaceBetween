@@ -6,21 +6,27 @@ var url = window.location.href;
 var updatedUrl = url + "mapPage";
 var infowindow;
 var map;
+let centerpoint;
 
 function initMap() {
   infowindow = new google.maps.InfoWindow();
   address = JSON.parse(localStorage.getItem('coordinates'));
+    function midpoint(lat1, long1, lat2, long2) {
+      centerpoint = [lat1 + (lat2 - lat1) * .50, long1 + (long2 - long1) * .50];
+    }
+    midpoint(address.firstCoordinates.lat,address.firstCoordinates.lng, address.secondCoordinates.lat, address.secondCoordinates.lng);
   var directionsService = new google.maps.DirectionsService();
   var directionsDisplay = new google.maps.DirectionsRenderer();
   var firstStaticLocation = new google.maps.LatLng(address.firstCoordinates.lat,address.firstCoordinates.lng);
   var portland = new google.maps.LatLng(address.secondCoordinates.lat,address.secondCoordinates.lng);
   var mapOptions = {
     zoom: 17,
-    center: firstStaticLocation
+    center: new google.maps.LatLng(centerpoint[0], centerpoint[1])
   }
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
   
   calcRoute(firstStaticLocation, portland, directionsDisplay, directionsService);
+
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
     location: firstStaticLocation,
@@ -53,10 +59,14 @@ function createMarker(place) {
   //   infowindow.open(map, this);
   // });
   new google.maps.Marker({position : {lat: 45.428605, lng: -122.53876600000001}, setMap : map})
+
+  function midpoint(lat1, long1, lat2, long2) {
+    centerpoint = [lat1 + (lat2 - lat1) * .50, long1 + (long2 - long1) * .50];
+  }
+  midpoint(address.firstCoordinates.lat,address.firstCoordinates.lng, address.secondCoordinates.lat, address.secondCoordinates.lng);
 }
 
 function calcRoute(first, second, directionsDisplay, directionsService) {
-
   var request = {
     origin: first,
     destination: second,
@@ -67,7 +77,29 @@ function calcRoute(first, second, directionsDisplay, directionsService) {
       directionsDisplay.setDirections(result);
     }
   });
+    var service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix({
+        origins: [first],
+        destinations: [second],
+        travelMode: google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+        avoidHighways: false,
+        avoidTolls: false
+    }, function (response, status) {
+        if (status == google.maps.DistanceMatrixStatus.OK && response.rows[0].elements[0].status != "ZERO_RESULTS") {
+            var distance = response.rows[0].elements[0].distance.text;
+            var duration = response.rows[0].elements[0].duration.text;
+            var dvDistance = document.getElementById("dvDistance");
+           dvDistance.innerHTML = "";
+            dvDistance.innerHTML += "Distance: " + distance + "<br />";
+            dvDistance.innerHTML += "Duration:" + duration;
+ 
+        } else {
+            alert("Unable to find the distance via road.");
+        }
+    });
 }
+
 
 function getCoordinates () {
     $.ajax({
@@ -83,7 +115,7 @@ function getCoordinates () {
       .then(data => { 
         address.secondCoordinates = data.results[0].geometry.location;
         localStorage.setItem('coordinates', JSON.stringify(address));
-        window.location = updatedUrl;
+      window.location = updatedUrl;
     })
 })}
 
@@ -93,5 +125,3 @@ $('#address').submit(function(event) {
     address.second = $('#addr-second').val();
     getCoordinates();
 });
-
-
