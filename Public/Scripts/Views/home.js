@@ -2,8 +2,6 @@
 
 const API_KEY = 'AIzaSyC9RhI2XAtoSBUZXkxnbHrhojb2rhuufmM';
 let address = {};
-var url = window.location.href;
-var updatedUrl = url + "mapPage";
 var infowindow;
 var map;
 let centerpoint;
@@ -99,45 +97,3 @@ function calcRoute(first, second, directionsDisplay, directionsService) {
         }
     });
 }
-
-
-function getCoordinates () {
-    $.ajax({
-        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address.first}&key=${API_KEY}`,
-        type: 'GET'
-    })
-    .then(data => { 
-      address.firstCoordinates = data.results[0].geometry.location;      
-      $.ajax({
-        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address.second}&key=${API_KEY}`,
-        type: 'GET'
-      })
-      .then(data => { 
-        address.secondCoordinates = data.results[0].geometry.location;
-        localStorage.setItem('coordinates', JSON.stringify(address));
-      window.location = updatedUrl;
-    })
-})}
-
-$('#address').submit(function(event) {
-    event.preventDefault();
-    address.first = $('#addr-first').val();
-    address.second = $('#addr-second').val();
-    getCoordinates();
-});
-
-google.maps.event.addDomListener(window, 'load', function () {
-  var address1 = new google.maps.places.Autocomplete(document.getElementById('addr-first'));
-  var address2 = new google.maps.places.Autocomplete(document.getElementById('addr-second'));
-  google.maps.event.addListener(address1, address2, 'place_changed', function () {
-      var place = address1.getPlace();
-      var place = address2.getPlace();
-      var address = place.formatted_address;
-      var latitude = place.geometry.location.lat();
-      var longitude = place.geometry.location.lng();
-      var mesg = "Address: " + address;
-      mesg += "\nLatitude: " + latitude;
-      mesg += "\nLongitude: " + longitude;
-      alert(mesg);
-  });
-});
