@@ -5,6 +5,7 @@ let address = {};
 var url = window.location.href;
 var updatedUrl = url + "mapPage";
 var infowindow = new google.maps.InfoWindow();
+let centerpoint;
 
 function initMap() {
   address = JSON.parse(localStorage.getItem('coordinates'));
@@ -19,6 +20,7 @@ function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   
   calcRoute(firstStaticLocation, portland, directionsDisplay, directionsService);
+
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
     location: firstStaticLocation,
@@ -50,6 +52,10 @@ function createMarker(place) {
     infowindow.setContent(place.name);
     infowindow.open(map, this);
   });
+  function midpoint(lat1, long1, lat2, long2) {
+    centerpoint = [lat1 + (lat2 - lat1) * .50, long1 + (long2 - long1) * .50];
+  }
+  midpoint(address.firstCoordinates.lat,address.firstCoordinates.lng, address.secondCoordinates.lat, address.secondCoordinates.lng);
 }
 
 function calcRoute(first, second, directionsDisplay, directionsService) {
