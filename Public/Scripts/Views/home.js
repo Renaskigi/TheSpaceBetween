@@ -4,7 +4,7 @@ const API_KEY = 'AIzaSyC9RhI2XAtoSBUZXkxnbHrhojb2rhuufmM';
 let address = {};
 var url = window.location.href;
 var updatedUrl = url + "mapPage";
-var infowindow = new google.maps.InfoWindow();
+// var infowindow = new google.maps.InfoWindow();
 let centerpoint;
 
 function initMap() {
