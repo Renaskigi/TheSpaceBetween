@@ -4,9 +4,11 @@ const API_KEY = 'AIzaSyC9RhI2XAtoSBUZXkxnbHrhojb2rhuufmM';
 let address = {};
 var url = window.location.href;
 var updatedUrl = url + "mapPage";
-var infowindow = new google.maps.InfoWindow();
+var infowindow;
+var map;
 
 function initMap() {
+  infowindow = new google.maps.InfoWindow();
   address = JSON.parse(localStorage.getItem('coordinates'));
   var directionsService = new google.maps.DirectionsService();
   var directionsDisplay = new google.maps.DirectionsRenderer();
@@ -16,7 +18,7 @@ function initMap() {
     zoom: 17,
     center: firstStaticLocation
   }
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
   
   calcRoute(firstStaticLocation, portland, directionsDisplay, directionsService);
   var service = new google.maps.places.PlacesService(map);
@@ -43,13 +45,14 @@ function createMarker(place) {
  
   var marker = new google.maps.Marker({
       position : placeLoc,
-      setMap : map
-  }); 
- 
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
-    infowindow.open(map, this);
   });
+  marker.setMap(map);
+ 
+  // google.maps.event.addListener(marker, 'click', function() {
+  //   infowindow.setContent(place.name);
+  //   infowindow.open(map, this);
+  // });
+  new google.maps.Marker({position : {lat: 45.428605, lng: -122.53876600000001}, setMap : map})
 }
 
 function calcRoute(first, second, directionsDisplay, directionsService) {
