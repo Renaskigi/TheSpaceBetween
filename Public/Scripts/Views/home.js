@@ -5,9 +5,11 @@ let address = {};
 var url = window.location.href;
 var updatedUrl = url + "mapPage";
 var infowindow;
+var map;
 let centerpoint;
 
 function initMap() {
+  infowindow = new google.maps.InfoWindow();
   address = JSON.parse(localStorage.getItem('coordinates'));
     function midpoint(lat1, long1, lat2, long2) {
       centerpoint = [lat1 + (lat2 - lat1) * .50, long1 + (long2 - long1) * .50];
@@ -21,7 +23,7 @@ function initMap() {
     zoom: 17,
     center: new google.maps.LatLng(centerpoint[0], centerpoint[1])
   }
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
   
   calcRoute(firstStaticLocation, portland, directionsDisplay, directionsService);
 
@@ -49,13 +51,15 @@ function createMarker(place) {
  
   var marker = new google.maps.Marker({
       position : placeLoc,
-      setMap : map
-  }); 
- 
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
-    infowindow.open(map, this);
   });
+  marker.setMap(map);
+ 
+  // google.maps.event.addListener(marker, 'click', function() {
+  //   infowindow.setContent(place.name);
+  //   infowindow.open(map, this);
+  // });
+  new google.maps.Marker({position : {lat: 45.428605, lng: -122.53876600000001}, setMap : map})
+
   function midpoint(lat1, long1, lat2, long2) {
     centerpoint = [lat1 + (lat2 - lat1) * .50, long1 + (long2 - long1) * .50];
   }
