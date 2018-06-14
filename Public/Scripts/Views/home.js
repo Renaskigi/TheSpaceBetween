@@ -8,21 +8,21 @@ let centerpoint;
 
 function initMap() {
   address = JSON.parse(localStorage.getItem('coordinates'));
+    function midpoint(lat1, long1, lat2, long2) {
+      centerpoint = [lat1 + (lat2 - lat1) * .50, long1 + (long2 - long1) * .50];
+    }
+    midpoint(address.firstCoordinates.lat,address.firstCoordinates.lng, address.secondCoordinates.lat, address.secondCoordinates.lng);
   var directionsService = new google.maps.DirectionsService();
   var directionsDisplay = new google.maps.DirectionsRenderer();
   var firstStaticLocation = new google.maps.LatLng(address.firstCoordinates.lat,address.firstCoordinates.lng);
   var portland = new google.maps.LatLng(address.secondCoordinates.lat,address.secondCoordinates.lng);
   var mapOptions = {
     zoom: 17,
-    center: firstStaticLocation
+    center: new google.maps.LatLng(centerpoint[0], centerpoint[1])
   }
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   directionsDisplay.setMap(map);
   calcRoute(firstStaticLocation, portland, directionsDisplay, directionsService);
-  function midpoint(lat1, long1, lat2, long2) {
-    centerpoint = [lat1 + (lat2 - lat1) * .50, long1 + (long2 - long1) * .50];
-  }
-  midpoint(address.firstCoordinates.lat,address.firstCoordinates.lng, address.secondCoordinates.lat, address.secondCoordinates.lng);
 }
 
 function calcRoute(first, second, directionsDisplay, directionsService) {
