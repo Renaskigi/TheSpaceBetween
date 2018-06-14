@@ -90,7 +90,7 @@ function calcRoute(first, second, directionsDisplay, directionsService) {
             var distance = response.rows[0].elements[0].distance.text;
             var duration = response.rows[0].elements[0].duration.text;
             var dvDistance = document.getElementById("dvDistance");
-           dvDistance.innerHTML = "";
+            dvDistance.innerHTML = "";
             dvDistance.innerHTML += "Distance: " + distance + "<br />";
             dvDistance.innerHTML += "Duration:" + duration;
  
@@ -124,4 +124,20 @@ $('#address').submit(function(event) {
     address.first = $('#addr-first').val();
     address.second = $('#addr-second').val();
     getCoordinates();
+});
+
+google.maps.event.addDomListener(window, 'load', function () {
+  var address1 = new google.maps.places.Autocomplete(document.getElementById('addr-first'));
+  var address2 = new google.maps.places.Autocomplete(document.getElementById('addr-second'));
+  google.maps.event.addListener(address1, address2, 'place_changed', function () {
+      var place = address1.getPlace();
+      var place = address2.getPlace();
+      var address = place.formatted_address;
+      var latitude = place.geometry.location.lat();
+      var longitude = place.geometry.location.lng();
+      var mesg = "Address: " + address;
+      mesg += "\nLatitude: " + latitude;
+      mesg += "\nLongitude: " + longitude;
+      alert(mesg);
+  });
 });
