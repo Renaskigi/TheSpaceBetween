@@ -26,11 +26,29 @@ app.get( '/config', function (request, response) {
     response.sendFile( 'config.js', {root: './'});
 });
 
-app.post('', bodyParser, function(request, response) {
-    console.log(request.body);
-    response.send('Location posted to server!!');
-});
-
 app.listen(PORT, function() {
     console.log(`listening on ${PORT}`);
 });
+
+app.post('/account', (request, response) => {
+    client.query(
+      'INSERT INTO authentication(username, userpass) VALUES($1, $2) ON CONFLICT DO NOTHING',
+      [request.body.username, request.body.userpass]
+    )
+    .then(() => response.send('username/password insert complete'))
+    .catch(console.error)
+});
+
+
+app.get( '/account', function (request, response) {
+    response.sendFile( 'account.html', {root: './Public'});
+});
+
+// app.get('/login', (request, response) => {
+//     client.query(`
+//       SELECT * FROM authentication WHERE 
+//       username = ???????????? , userpass = ???????????;`
+//     )
+//     .then(result => response.send(result.rows))
+//     .catch(console.error);
+//   });
