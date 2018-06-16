@@ -40,50 +40,94 @@
             <td>
                 <div id="dvPanel" style="width: 500px; height: 500px">
                 </div>
+                <div id="filter-info"></div>
             </td>
         </tr>
         </table>
 
+        <!-- <div id="buttons">
+  
+            <input type="checkbox" name="filter" id="cafe" class='chk-btn'>
+            
+            
+            <input type="checkbox" name="filter" id="park" class='chk-btn'>
+            <label for='park'>park</label>
+            
+            <input type="checkbox" name="filter" id="bar" class='chk-btn'>
+            <label for='bar'>bar</label>
+            <br>
+          </div>
+          <br>
+          <div id="map"></div>
+          <br> -->
+          
+          <select id="allTypes" multiple="multiple" class="case btn btn-default">
+               
+    <option name="mytype" class="case" id="school"  value="school">School</option>
+    <option  name="mytype" class="case" id="restaurant"  value="restaurant"/><label for="restaurant">Restaurant</option>
+    <option name="mytype" class="case"  id="hospital"  value="hospital"/><label for="hospital">Hospital</option>
+    <option  name="mytype"  class="case" id="bus_station"  value="bus_station"/><label for="bus_station">Bus Stopedge</option>
+    <option name="mytype"  class="case" id="park"  value="park"/><label for="park">Park</option>
 
 
+    <option name="mytype"  class="case" id="bank"  value="bank">Bank</option>
+    <option  name="mytype"  class="case" id="bar"  value="bar"/><label for="restaurant">Bar</option>
+    <option name="mytype"  class="case" id="movie_theater"  value="movie_theater"/><label for="movie_theater">Movie Theatre</option>
+    <option  name="mytype"  class="case" id="night_club"  value="night_club"/><label for="bus_station">Night Club</option>
+    <option name="mytype"  class="case" id="zoo"  value="zoo"/><label for="park">Zoo</option>
+
+    <option name="mytype"  class="case" id="gym"  value="gym">Gym</option>
+    <option  name="mytype"  class="case" id="atm"  value="atm"/><label for="restaurant">ATM</option>
+    <option name="mytype"  class="case" id="spa"  value="spa"/><label for="movie_theater">SPA</option>
 
 
+        </select>
+
+       
+        <button id="show">Show</button>
+
+
+    </br> <button id="hide">Hide</button>
 
 
     <aside>
         <h2>Filter From:</h2>
         <ul class="filter-categories">
             <li>
-                <input type="checkbox" name="select-all">
-                <span>Select All</span>
+                <input type="checkbox" value='select-all' name="filter" class="check-button" id="select-all">
+                <label for='select-all'>Select All</label>
             </li>
             <li>
-                <input type="checkbox" name="coffee">
-                <span>Coffee</span>
+                <input type="checkbox" value='cafe' name="filter" class="check-button" id="cafe">
+                <label for='cafe'>cafe</label>
             </li>
             <li>
-                <input type="checkbox" name="restaurant">
-                <span>Restaurant</span>
+                <input type="checkbox" value='coffee' name="filter" class="check-button" id="coffee">
+                <label for='coffee'>Coffee</label>
             </li>
             <li>
-                <input type="checkbox" name="wifi">
-                <span>Wifi</span> 
+                <input type="checkbox" name="filter" class="check-button" id="restaurant">
+                <label for='restaurant'>Restaurant</label>
             </li>
             <li>
-                <input type="checkbox" name="gas">
-                <span>Gas</span> 
+                <input type="checkbox" name="filter" class="check-button" id="wifi">
+                <label for='wifi'>Wifi</label> 
             </li>
             <li>
-                <input type="checkbox" name="grocery">
-                <span>Grocery</span>
+                <input type="checkbox" name="filter" class="check-button" id="gas">
+                <label for='gas'>Gas</label> 
             </li>
             <li>
-                <input type="checkbox" name="park">
-                <span>Park</span> 
+                <input type="checkbox" name="filter" class="check-button" id="grocery">
+                <label for='grocery'>Grocery</label>
             </li>
             <li>
-                <input type="checkbox" name="hotel">
-                <span>Hotel</span> 
+                <input type="checkbox" name="filter" class="check-button" id="park">
+                <label for='park'>Park</label> 
+            </li>
+            <li>
+                <input type="checkbox" name="filter" class="check-button" id="hotel">
+                <label for='hotel'>Hotel</label> 
             </li>
         </ul>  
     </aside>
