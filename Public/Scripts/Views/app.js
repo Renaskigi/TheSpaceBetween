@@ -2,6 +2,7 @@
 let address = {};
 var url = window.location.href;
 var updatedUrl = url + "mapPage";
+var config = api.key;
 
 function setGoogleListener () {
     console.log("Adding google listener...");

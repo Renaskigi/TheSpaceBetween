@@ -6,7 +6,10 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const app = express();
 // const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT';
+
 const conString = 'postgres://postgres@localhost:5432/spacebetween';
+
+
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
@@ -38,7 +41,6 @@ app.post('/account', (request, response) => {
     .then(() => response.send('username/password insert complete'))
     .catch(console.error)
 });
-
 
 app.get( '/account', function (request, response) {
     response.sendFile( 'account.html', {root: './Public'});
