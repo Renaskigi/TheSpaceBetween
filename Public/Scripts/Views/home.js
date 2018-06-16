@@ -32,12 +32,13 @@ function initMap() {
 
 
   //move the script below outside in init map fucntion so you can use the types. line 32-37?//
-  
+
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
     location: new google.maps.LatLng(centerpoint[0], centerpoint[1]),
     radius: 500,
-    type: ['store']
+    type: ['cafe','night_club', 'library', 'bar', 'school', 'park']
+
   }, callback);
 
   directionsDisplay.setMap(map);
@@ -118,9 +119,9 @@ function calcRoute(first, second, directionsDisplay, directionsService) {
 function placeMarkers() {
   var service = new google.maps.places.PlacesService(map);
 service.nearbySearch({
-  location: firstStaticLocation,
+  location: new google.maps.LatLng(centerpoint[0], centerpoint[1]),
   radius: 500,
-  type: ['cafe','night_club', 'library', 'bar', 'school', 'park']
+  type: ['cafe', 'library', 'bar', 'school', 'park']
 }, callback);
 }
 
@@ -157,9 +158,9 @@ $('#allTypes').on('click',function(){
 var geocoder = new google.maps.Geocoder();
 
         // var pyrmont = new google.maps.LatLng(20.268455824834792, 85.84099235520011);
-   
+
         // var infowindow = new google.maps.InfoWindow();
-        // // var waypoints = [];                  
+        // // var waypoints = [];
         // function initialize() {
         //     map = new google.maps.Map(document.getElementById('map'), {
         //         mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -168,7 +169,7 @@ var geocoder = new google.maps.Geocoder();
         //     });
         //     infowindow = new google.maps.InfoWindow();
         //     //document.getElementById('directionsPanel').innerHTML='';
-            
+
         //    }
 
         // function createMarker(place,icon) {
@@ -177,7 +178,7 @@ var geocoder = new google.maps.Geocoder();
         //         map: map,
         //         position: place.geometry.location,
         //         icon: icon,
-        //         visible:true  
+        //         visible:true
 
         //     });
 
@@ -189,12 +190,12 @@ var geocoder = new google.maps.Geocoder();
 
         // }
 
-        
+
         // var source="";
         // var dest='';
 
         function search_types(latLng, type){
-            clearOverlays(); 
+            clearOverlays();
 
             if(!latLng){
                 var latLng = pyrmont;
@@ -264,12 +265,12 @@ var geocoder = new google.maps.Geocoder();
                         map.setZoom(14);
                         map.setCenter(latlng);
                         marker = new google.maps.Marker({
-                            position: latlng, 
+                            position: latlng,
                             map: map,
                             icon: markerImage,
-                            draggable: true 
+                            draggable: true
 
-                        }); 
+                        });
                         $('#btn').hide();
                         $('#latitude,#longitude').show();
                         $('#address').val(results[0].formatted_address);
@@ -313,5 +314,4 @@ var geocoder = new google.maps.Geocoder();
                 }
             });
 
-        }   
-
+        }

@@ -2,15 +2,21 @@
 'use strict'
 
 if (window.location.href.includes("resultPage")) {
-  resultsInfo = JSON.parse(localStorage.getItem('results'));
-  placeInfo = JSON.parse(localStorage.getItem('places'));
+  var resultsInfo = JSON.parse(localStorage.getItem('results'));
+  var placeInfo = JSON.parse(localStorage.getItem('places'));
 }
 
-'use strict';
 
-var url = window.location.href;
-var updatedUrl = url.replace("mapPage", "resultPage");
-
-$('#selections').submit(function(event) {
-    console.log('clicked');
-});
+// var newurl = window.location.href;
+// var newupdatedUrl = newurl.replace("mapPage", "resultPage");
+// // $('#selections').submit(function(event) {
+// //     console.log('clicked');
+// // });
+//
+// $( "#selections" ).click(function() {
+//   window.location = newupdatedUrl;
+// });
+//
+// document.getElementById("selections").onclick = function () {
+//     location.href = "resultPage.html";
+//   }
