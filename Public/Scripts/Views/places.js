@@ -7,16 +7,3 @@ if (window.location.href.includes("resultPage")) {
 }
 
 
-// var newurl = window.location.href;
-// var newupdatedUrl = newurl.replace("mapPage", "resultPage");
-// // $('#selections').submit(function(event) {
-// //     console.log('clicked');
-// // });
-//
-// $( "#selections" ).click(function() {
-//   window.location = newupdatedUrl;
-// });
-//
-// document.getElementById("selections").onclick = function () {
-//     location.href = "resultPage.html";
-//   }

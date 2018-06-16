@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 // const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT';
 
-const conString = 'postgres://postgres@localhost:5432/spacebetween';
+const conString = 'postgres://postgres:Alchemy@localhost:5432/spacebetween';
 
 const client = new pg.Client(conString);
 client.connect();
@@ -24,7 +24,7 @@ app.get( '/mapPage', function (request, response) {
     response.sendFile( 'mapPage.html', {root: './Public'});
 });
 
-app.get( '/resultPage', function (request, response) {
+app.get( './resultPage', function (request, response) {
     response.sendFile( 'resultPage.html', {root: './Public'});
 });
 
@@ -37,24 +37,22 @@ app.listen(PORT, function() {
     console.log(`listening on ${PORT}`);
 });
 
-app.post('/account', (request, response) => {
+app.post( '/account', (request, response) => {
     client.query(
       'INSERT INTO authentication(username, userpass) VALUES($1, $2) ON CONFLICT DO NOTHING',
       [request.body.username, request.body.userpass]
     )
-    .then(() => response.send('username/password insert complete'))
+    .then(() => response.send('New account created! Welcome, ' + request.body.username + '!'))
     .catch(console.error)
 });
 
-app.get( '/account', function (request, response) {
+app.get('/account', function (request, response) {
     response.sendFile( 'account.html', {root: './Public'});
 });
 
-// app.get('/login', (request, response) => {
-//     client.query(`
-//       SELECT * FROM authentication WHERE
-//       username = ???????????? , userpass = ???????????;`
-//     )
-//     .then(result => response.send(result.rows))
-//     .catch(console.error);
-//   });
+app.get('/account', (request, response) => {
+    client.query(
+        'SELECT * FROM authentication WHERE username =' + request.body.username + 'AND userpass =' +request.body.userpass,
+    )
+    response.sendFile ('successfulLogin.html', {root: './Public'});
+});
