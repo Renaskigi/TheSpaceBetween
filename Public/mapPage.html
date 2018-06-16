@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="Styling/base.css" type="text/css">
     <link rel="stylesheet" href="Styling/result.css" type="text/css">
@@ -37,9 +37,10 @@
                 <div id="map" style="width: 500px; height: 500px">
                 </div>
             </td>
-            <td>
+            <!-- <td>
                 <div id="dvPanel" style="width: 500px; height: 500px">
                 </div>
+
                 <div id="filter-info"></div>
             </td>
         </tr>
@@ -89,6 +90,14 @@
 
     </br> <button id="hide">Hide</button>
 
+            </td> -->
+        </tr>
+        </table>
+        <div>
+            <form>
+                <input id="selections" type="submit" value="Proceed With Selections">
+            </form>
+        </div>
 
     <aside>
         <h2>Filter From:</h2>
@@ -110,26 +119,30 @@
                 <label for='restaurant'>Restaurant</label>
             </li>
             <li>
-                <input type="checkbox" name="filter" class="check-button" id="wifi">
-                <label for='wifi'>Wifi</label> 
+
+                <input type="checkbox" name="wifi">
+                <span>Wifi</span>
             </li>
             <li>
-                <input type="checkbox" name="filter" class="check-button" id="gas">
-                <label for='gas'>Gas</label> 
+                <input type="checkbox" name="gas">
+                <span>Gas</span>
+
             </li>
             <li>
                 <input type="checkbox" name="filter" class="check-button" id="grocery">
                 <label for='grocery'>Grocery</label>
             </li>
             <li>
+
                 <input type="checkbox" name="filter" class="check-button" id="park">
                 <label for='park'>Park</label> 
             </li>
             <li>
                 <input type="checkbox" name="filter" class="check-button" id="hotel">
                 <label for='hotel'>Hotel</label> 
+
             </li>
-        </ul>  
+        </ul>
     </aside>
     <footer>
             <h3>&copy; The | Space | Between </h3>
@@ -139,7 +152,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.8.6/page.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9RhI2XAtoSBUZXkxnbHrhojb2rhuufmM&libraries=geometry,directions,places&callback=initMap"
     type="text/javascript"></script>
-    <script type="text/javascript" src= "Scripts/Views/home.js"></script>  
-    <script type="text/javascript" src= "Scripts/Views/places.js"></script>   
+    <script type="text/javascript" src= "Scripts/Views/home.js"></script>
+    <script type="text/javascript" src= "Scripts/Views/places.js"></script>
+  
 </body>
-</html>  
+</html>

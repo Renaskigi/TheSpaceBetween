@@ -1,18 +1,22 @@
 'use strict';
+
 let address = {};
 var url = window.location.href;
 var updatedUrl = url + "mapPage";
+// let config = api.key;
 
 function setGoogleListener () {
     console.log("Adding google listener...");
     google.maps.event.addDomListener(window, 'load', autocomplete);
 }
+
 $('#address').submit(function(event) {
     event.preventDefault();
     address.first = $('#addr-first').val();
     address.second = $('#addr-second').val();
     getCoordinates();
 });
+
 
 function autocomplete() {
     console.log("Adding auto-complete...");
@@ -36,14 +40,14 @@ function getCoordinates () {
         url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address.first}&key=${config.api_key}`,
         type: 'GET'
     })
-    .then(data => { 
+    .then(data => {
         console.log(data);
-      address.firstCoordinates = data.results[0].geometry.location;      
+      address.firstCoordinates = data.results[0].geometry.location;
       $.ajax({
         url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address.second}&key=${config.api_key}`,
         type: 'GET'
       })
-      .then(data => { 
+      .then(data => {
         address.secondCoordinates = data.results[0].geometry.location;
         localStorage.setItem('coordinates', JSON.stringify(address));
       window.location = updatedUrl;
