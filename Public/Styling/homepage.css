@@ -1,8 +1,8 @@
 /*header css  */
-html { 
-  background: url(../images/plain.jpg) no-repeat center center fixed; 
+html {
+  background: url(../images/plain.jpg) no-repeat center center fixed;
   background-size: cover;
-} 
+}
 
 /* header {
   margin: 20px;
@@ -11,12 +11,12 @@ html {
 } */
 
 h1 {
-  font-size: 140px;
+  font-size: 50px;
   text-align: center;
 }
 
 h3 {
-  font-size: 11px;
+  font-size: 14px;
   text-align: center;
 }
 /*main nav css*/
@@ -193,3 +193,27 @@ form#checkbox-options input {
   text-align: center;
 }
 
+/* Media Queries */
+@media screen and (min-width: 500px) {
+  h1 {
+    font-size: 85px;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 19px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  h1 {
+    font-size: 140px;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 27px;
+    text-align: center;
+  }
+}
