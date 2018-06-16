@@ -36,14 +36,14 @@ function getCoordinates () {
         url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address.first}&key=${config.api_key}`,
         type: 'GET'
     })
-    .then(data => { 
+    .then(data => {
         console.log(data);
-      address.firstCoordinates = data.results[0].geometry.location;      
+      address.firstCoordinates = data.results[0].geometry.location;
       $.ajax({
         url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address.second}&key=${config.api_key}`,
         type: 'GET'
       })
-      .then(data => { 
+      .then(data => {
         address.secondCoordinates = data.results[0].geometry.location;
         localStorage.setItem('coordinates', JSON.stringify(address));
       window.location = updatedUrl;
