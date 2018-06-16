@@ -9,7 +9,6 @@ const app = express();
 
 const conString = 'postgres://postgres@localhost:5432/spacebetween';
 
-
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
