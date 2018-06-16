@@ -1,5 +1,6 @@
-html {
-    background: url(../images/wheat.jpg) no-repeat center center fixed;
+
+html { 
+    background: url(../images/mappagebackground.jpg) no-repeat center center fixed; 
     background-size: cover;
 }
 
