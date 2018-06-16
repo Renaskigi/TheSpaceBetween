@@ -3,7 +3,9 @@
 let address = {};
 var url = window.location.href;
 var updatedUrl = url + "mapPage";
-// let config = api.key;
+
+// var config = api.key;
+
 
 function setGoogleListener () {
     console.log("Adding google listener...");
@@ -53,3 +55,4 @@ function getCoordinates () {
       window.location = updatedUrl;
     })
 })}
+
