@@ -6,7 +6,10 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const app = express();
 // const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT';
-const conString = 'postgres://wtronvig@localhost:5432/spacebetween';
+
+const conString = 'postgres://postgres@localhost:5432/spacebetween';
+
+
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
@@ -39,14 +42,13 @@ app.post('/account', (request, response) => {
     .catch(console.error)
 });
 
-
 app.get( '/account', function (request, response) {
     response.sendFile( 'account.html', {root: './Public'});
 });
 
 // app.get('/login', (request, response) => {
 //     client.query(`
-//       SELECT * FROM authentication WHERE 
+//       SELECT * FROM authentication WHERE
 //       username = ???????????? , userpass = ???????????;`
 //     )
 //     .then(result => response.send(result.rows))
