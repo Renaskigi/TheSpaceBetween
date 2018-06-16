@@ -29,11 +29,11 @@ function initMap() {
     location: new google.maps.LatLng(centerpoint[0], centerpoint[1]),
     radius: 500,
     type: ['store']
-  }, callback);
+  }, resultsPlaces);
   directionsDisplay.setMap(map);
 }
 
-function callback(results, status) {
+function resultsPlaces(results, status) {
   console.log('results', results)
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
@@ -52,8 +52,7 @@ function createMarker(place) {
   marker.setMap(map);
  
   google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-    'Hours: ' + place.opening_hours + '<br>' +
+    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + '<br>' +
     '</div>');
     console.log(place);
     infowindow.open(map, this);
