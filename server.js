@@ -9,7 +9,6 @@ const app = express();
 
 const conString = 'postgres://postgres:Alchemy@localhost:5432/spacebetween';
 
-
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
@@ -24,6 +23,11 @@ app.get( '/', function (request, response) {
 app.get( '/mapPage', function (request, response) {
     response.sendFile( 'mapPage.html', {root: './Public'});
 });
+
+app.get( '/resultPage', function (request, response) {
+    response.sendFile( 'resultPage.html', {root: './Public'});
+});
+
 
 app.get( '/config', function (request, response) {
     response.sendFile( 'config.js', {root: './'});
