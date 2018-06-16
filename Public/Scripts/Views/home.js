@@ -21,7 +21,7 @@ function initMap() {
     center: new google.maps.LatLng(centerpoint[0], centerpoint[1])
   }
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  
+
   calcRoute(firstStaticLocation, portland, directionsDisplay, directionsService);
 
   var service = new google.maps.places.PlacesService(map);
@@ -40,22 +40,23 @@ function callback(results, status) {
       createMarker(results[i]);
     }
   }
+  localStorage.setItem('results', JSON.stringify(results));
 }
 
 function createMarker(place) {
   var placeLoc =  {lat:place.geometry.location.lat(),lng:place.geometry.location.lng()}
   console.log('place', placeLoc);
- 
   var marker = new google.maps.Marker({
       position : placeLoc,
   });
   marker.setMap(map);
- 
+
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
     'Hours: ' + place.opening_hours + '<br>' +
     '</div>');
     console.log(place);
+
     infowindow.open(map, this);
   });
   new google.maps.Marker({position : {lat: 45.428605, lng: -122.53876600000001}, setMap : map})
@@ -64,6 +65,7 @@ function createMarker(place) {
     centerpoint = [lat1 + (lat2 - lat1) * .50, long1 + (long2 - long1) * .50];
   }
   midpoint(address.firstCoordinates.lat,address.firstCoordinates.lng, address.secondCoordinates.lat, address.secondCoordinates.lng);
+  localStorage.setItem('place', JSON.stringify(place));
 }
 
 function calcRoute(first, second, directionsDisplay, directionsService) {
@@ -93,7 +95,7 @@ function calcRoute(first, second, directionsDisplay, directionsService) {
             dvDistance.innerHTML = "";
             dvDistance.innerHTML += "Distance: " + distance + "<br />";
             dvDistance.innerHTML += "Duration:" + duration;
- 
+
         } else {
             alert("Unable to find the distance via road.");
         }
