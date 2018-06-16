@@ -2,13 +2,8 @@
 'use strict'
 
 if (window.location.href.includes("resultPage")) {
-  resultsInfo = JSON.parse(localStorage.getItem('results'));
-  placeInfo = JSON.parse(localStorage.getItem('places'));
+  var resultsInfo = JSON.parse(localStorage.getItem('results'));
+  var placeInfo = JSON.parse(localStorage.getItem('places'));
 }
 
-var url = window.location.href;
-var updatedUrl = url.replace("mapPage", "resultPage");
 
-$('#selections').submit(function(event) {
-    console.log('clicked');
-});
