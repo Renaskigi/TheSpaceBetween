@@ -1,16 +1,20 @@
+
 html { 
     background: url(../images/mappagebackground.jpg) no-repeat center center fixed; 
     background-size: cover;
-} 
+}
 
 .filter-categories {
     list-style-type: none;
 }
-/* body {
-    background: rgb(154, 191, 237);
-} */
+
+table {
+  max-width: 90%;
+  text-align: center; 
+}
+
 footer {
-   position: absolute;
+   position: inherit;
    bottom: 0;
    width: 100%;
 }
