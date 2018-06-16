@@ -9,12 +9,14 @@ function setGoogleListener () {
     console.log("Adding google listener...");
     google.maps.event.addDomListener(window, 'load', autocomplete);
 }
+
 $('#address').submit(function(event) {
     event.preventDefault();
     address.first = $('#addr-first').val();
     address.second = $('#addr-second').val();
     getCoordinates();
 });
+
 
 function autocomplete() {
     console.log("Adding auto-complete...");
