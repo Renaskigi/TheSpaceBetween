@@ -24,6 +24,11 @@ app.get( '/mapPage', function (request, response) {
     response.sendFile( 'mapPage.html', {root: './Public'});
 });
 
+app.get( '/resultPage', function (request, response) {
+    response.sendFile( 'resultPage.html', {root: './Public'});
+});
+
+
 app.get( '/config', function (request, response) {
     response.sendFile( 'config.js', {root: './'});
 });

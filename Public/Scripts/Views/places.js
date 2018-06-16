@@ -9,9 +9,8 @@ if (window.location.href.includes("resultPage")) {
 'use strict';
 
 var url = window.location.href;
-var updatedUrl = url.replace("mapPage?", "resultPage.html");
+var updatedUrl = url.replace("mapPage", "resultPage");
 
 $('#selections').submit(function(event) {
-    window.location = updatedUrl;
+    console.log('clicked');
 });
-
