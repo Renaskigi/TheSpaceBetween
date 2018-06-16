@@ -1,7 +1,7 @@
 html { 
     background: url(../images/wheat.jpg) no-repeat center center fixed; 
     background-size: cover;
-  } 
+} 
 
 .filter-categories {
     list-style-type: none;

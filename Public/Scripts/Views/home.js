@@ -55,6 +55,7 @@ function createMarker(place) {
   //   infowindow.setContent(place.name);
   //   infowindow.open(map, this);
   // });
+  
   new google.maps.Marker({position : {lat: 45.428605, lng: -122.53876600000001}, setMap : map})
 
   function midpoint(lat1, long1, lat2, long2) {
