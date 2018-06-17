@@ -40,7 +40,6 @@ function autocomplete() {
       var mesg = "Address: " + address;
       mesg += "\nLatitude: " + latitude;
       mesg += "\nLongitude: " + longitude;
-    //   alert(mesg);
   });
 }
 function getCoordinates () {

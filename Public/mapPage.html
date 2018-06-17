@@ -8,50 +8,39 @@
     <link rel="stylesheet" href="Styling/result.css" type="text/css">
     <link rel="stylesheet" href="Styling/fonts/style.css" type="text/css">
     <title>Map Page</title>
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-        #map {
-          height: 30em;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-          height: 20em;
-          margin: .5em;
-          padding: .5em;
-        }
-      </style>
 </head>
 <body>
+
   <header>
-    <h3>Map Results</h3>
-    <h5>Use the menu below to filter your results!</h5>
+    <h1>Map Results</h1>
+    <h3>Use the menu below to filter your results!</h3>
   </header>
     <!-- <div id="map"></div> -->
-
-    <table border="5px" cellpadding="10px" cellspacing="3">
-        <tr>
-            <td colspan="2">
-                <div id="dvDistance">
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div id="map" style="width: 500px; height: 500px">
-                </div>
-            </td>
-
-    </br>
-            </td>
-        </tr>
-        </table>
+    <div id="table">
+      <table border="5px" cellpadding="10px" cellspacing="3">
+          <tr>
+              <td colspan="2">
+                  <div id="dvDistance">
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div id="map" style="width: 500px; height: 500px">
+                  </div>
+              </td>
+            
+      </br>
+              </td>
+          </tr>
+          </table>
+        </div>
 
         <div>
             <form>
 
 
-                <a href = "/resultPage.html">See Results</a>
+                <a id="see-results" href = "/resultPage.html">See Results</a>
 
 
               </form>
@@ -77,6 +66,11 @@
           </div>
 
 
+
+
+
+    
+    </select>
 
     <footer>
             <h3>&copy; The | Space | Between </h3>

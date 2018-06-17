@@ -1,7 +1,17 @@
 
-html { 
-    background: url(../images/mountains.png) no-repeat center center fixed; 
+html {
+    background: url(../images/mountains.png) no-repeat center center fixed;
     background-size: cover;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 14px;
+  text-align: center;
 }
 
 .filter-categories {
@@ -10,12 +20,21 @@ html {
 
 table {
   max-width: 90%;
-  text-align: center; 
+  text-align: center;
+  margin: auto;
 }
 
+#see-results {
+  
+}
 footer {
-   bottom: 0;
-   width: 100%;
+    position: fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:30px;
+    text-align: center;
+    color: white;
 }
 section.results-box {
     border-style: ridge;
@@ -39,4 +58,17 @@ a2a_kit a2a_kit_size_32 a2a_default_style {
     height: 200px;
     width: 200px;
     background: lightblue;
+}
+
+#map {
+    height: 30em;
+}
+html, body {
+    height: 20em;
+    margin: .5em;
+    padding: .5em;
+  }
+#dvDistance {
+    background-color: greenyellow;
+    opacity: 4;
 }
