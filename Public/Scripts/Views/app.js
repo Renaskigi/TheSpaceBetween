@@ -4,6 +4,14 @@ let address = {};
 var url = window.location.href;
 var updatedUrl = url + "mapPage";
 
+// var config = api.key;
+function sayHi() {
+    if (localStorage.getItem("login")) {
+        const login = JSON.parse(localStorage.getItem("login"));
+        $("#welcomeLoggedIn").html("Welcome back, " + login.username)
+    }
+}
+
 
 function setGoogleListener () {
     console.log("Adding google listener...");
@@ -53,3 +61,4 @@ function getCoordinates () {
     })
 })}
 
+$(document).ready(()=> sayHi());
