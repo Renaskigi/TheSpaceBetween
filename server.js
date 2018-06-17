@@ -45,7 +45,13 @@ app.post( '/new-account', (request, response) => {
       'INSERT INTO authentication(username, userpass) VALUES($1, $2) ON CONFLICT DO NOTHING',
       [request.body.username, request.body.userpass]
     )
-    .then(() => response.send('New account created! Welcome, ' + request.body.username + '!'))
+    .then(() => client.query(
+        'SELECT * FROM authentication WHERE username = $1 AND userpass = $2',
+        [request.body.username, request.body.userpass]
+        )
+        .then((results) => response.send(results.rows))
+        .catch(console.error)
+    )
     .catch(console.error)
 });
 
