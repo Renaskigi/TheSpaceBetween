@@ -8,60 +8,20 @@
     <link rel="stylesheet" href="Styling/result.css" type="text/css">
     <link rel="stylesheet" href="Styling/fonts/style.css" type="text/css">
     <title>Map Page</title>
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-        #map {
-          height: 30em;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-          height: 20em;
-          margin: .5em;
-          padding: .5em;
-        }
-      </style>
 </head>
 <body>
-    <!-- <div id="map"></div> -->
-
     <table border="5px" cellpadding="10px" cellspacing="3">
-        <tr>
-            <td colspan="2">
-                <div id="dvDistance">
-                </div>
-            </td>
-        </tr>
-        <tr>
+        
+            <th id="dvDistance"></th>
             <td>
-                <div id="map" style="width: 500px; height: 500px">
-                </div>
+                <div id="map" style="width: 500px; height: 500px"></div>
             </td>
-            <!-- <td>
-                <div id="dvPanel" style="width: 500px; height: 500px">
-                </div>
-
-                <div id="filter-info"></div>
-            </td>
-        </tr>
-        </table>
-
-        <!<div id="buttons">
-
-            <input type="checkbox" name="filter" id="cafe" class='chk-btn'>
-
-
-            <input type="checkbox" name="filter" id="park" class='chk-btn'>
-            <label for='park'>park</label>
-
-            <input type="checkbox" name="filter" id="bar" class='chk-btn'>
-            <label for='bar'>bar</label>
-            <br>
-          </div>
-          <br>
-          <div id="map"></div>
-          <br> -->
-
+    <div>
+        <form>
+            <a href = "/resultPage.html">Click Me</a>
+            <input id="selections" type="submit" value="Refresh Map">
+        </form>
+    </div>
     <select id="allTypes" multiple="multiple" class="case btn btn-default">
 
         <option name="mytype" class="case" id="school"  value="school">School</option>
@@ -82,58 +42,6 @@
         <option name="mytype"  class="case" id="spa"  value="spa"/><label for="movie_theater">SPA</option>
     
     </select>
-    <div>
-        <form>
-            <a href = "/resultPage.html">Click Me</a>
-            <input id="selections" type="submit" value="Refresh Map">
-        </form>
-    </div>
-
-    <aside>
-        <h2>Filter From:</h2>
-        <ul class="filter-categories">
-            <li>
-                <input type="checkbox" value='select-all' name="filter" class="check-button" id="select-all">
-                <label for='select-all'>Select All</label>
-            </li>
-            <li>
-                <input type="checkbox" value='cafe' name="filter" class="check-button" id="cafe">
-                <label for='cafe'>cafe</label>
-            </li>
-            <li>
-                <input type="checkbox" value='coffee' name="filter" class="check-button" id="coffee">
-                <label for='coffee'>Coffee</label>
-            </li>
-            <li>
-                <input type="checkbox" name="filter" class="check-button" id="restaurant">
-                <label for='restaurant'>Restaurant</label>
-            </li>
-            <li>
-
-                <input type="checkbox" name="wifi">
-                <span>Wifi</span>
-            </li>
-            <li>
-                <input type="checkbox" name="gas">
-                <span>Gas</span>
-
-            </li>
-            <li>
-                <input type="checkbox" name="filter" class="check-button" id="grocery">
-                <label for='grocery'>Grocery</label>
-            </li>
-            <li>
-
-                <input type="checkbox" name="filter" class="check-button" id="park">
-                <label for='park'>Park</label>
-            </li>
-            <li>
-                <input type="checkbox" name="filter" class="check-button" id="hotel">
-                <label for='hotel'>Hotel</label>
-
-            </li>
-        </ul>
-    </aside>
     <footer>
             <h3>&copy; The | Space | Between </h3>
     </footer>
