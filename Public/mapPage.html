@@ -12,30 +12,35 @@
 <body>
 
   <header>
-    <h3>Map Results</h3>
-    <h5>Use the menu below to filter your results!</h5>
+    <h1>Map Results</h1>
+    <h3>Use the menu below to filter your results!</h3>
   </header>
     <!-- <div id="map"></div> -->
-
-    <table border="5px" cellpadding="10px" cellspacing="3">
-        
-            <th id="dvDistance"></th>
-            <td>
-
-                <div id="map" style="width: 500px; height: 500px">
-                </div>
-            </td>
-
-    </br>
-            </td>
-        </tr>
-        </table>
+    <div id="table">
+      <table border="5px" cellpadding="10px" cellspacing="3">
+          <tr>
+              <td colspan="2">
+                  <div id="dvDistance">
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div id="map" style="width: 500px; height: 500px">
+                  </div>
+              </td>
+            
+      </br>
+              </td>
+          </tr>
+          </table>
+        </div>
 
         <div>
             <form>
 
 
-                <a href = "/resultPage.html">See Results</a>
+                <a id="see-results" href = "/resultPage.html">See Results</a>
 
 
               </form>
