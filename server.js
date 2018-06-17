@@ -7,7 +7,10 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 // const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT';
 
+
 const conString = 'postgres://postgres@localhost:5432/spacebetween';
+
+
 
 const client = new pg.Client(conString);
 client.connect();
@@ -24,7 +27,7 @@ app.get( '/mapPage', function (request, response) {
     response.sendFile( 'mapPage.html', {root: './Public'});
 });
 
-app.get( './resultPage', function (request, response) {
+app.get( '/resultPage', function (request, response) {
     response.sendFile( 'resultPage.html', {root: './Public'});
 });
 

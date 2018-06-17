@@ -64,6 +64,8 @@ function createMarker(place) {
   var marker = new google.maps.Marker({
       position : placeLoc,
   });
+  markersArray.push(marker);
+
   marker.setMap(map);
 
   google.maps.event.addListener(marker, 'click', function() {
@@ -142,9 +144,11 @@ $('.filter-categories').on('click', 'input', function(){
 })
 
 $('#allTypes').on('click',function(){
-  for(var i=0; i<$('#allTypes').val().length;i++){
-      search_types(map.getCenter(),$('#allTypes').val()[i]);
-  }
+    search_types(map.getCenter(),$('#allTypes').val());
+
+//   for(var i=0; i<$('#allTypes').val().length;i++){
+//       search_types(map.getCenter(),$('#allTypes').val()[i]);
+//   }
 });
 
 // $('#allTypes').multiselect({
@@ -208,7 +212,8 @@ var geocoder = new google.maps.Geocoder();
             var request = {
                 location: latLng,
                 radius: 2000,
-                types: ['cafe','night_club', 'library', 'bar', 'school', 'park'] //e.g. school, restaurant,bank,bar,city_hall,gym,night_club,park,zoo
+                types: type
+                // types: ['cafe','night_club', 'library', 'bar', 'school', 'park'] //e.g. school, restaurant,bank,bar,city_hall,gym,night_club,park,zoo
             };
 
             var service = new google.maps.places.PlacesService(map);
@@ -228,7 +233,7 @@ var geocoder = new google.maps.Geocoder();
         // Deletes all markers in the array by removing references to them
         function clearOverlays() {
             if (markersArray) {
-                for (i in markersArray) {
+                for (var i = 0; i < markersArray.length; i++) {
                     markersArray[i].setVisible(false)
                 }
                 //markersArray.length = 0;
