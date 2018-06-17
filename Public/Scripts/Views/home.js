@@ -38,9 +38,9 @@ function initMap() {
     location: new google.maps.LatLng(centerpoint[0], centerpoint[1]),
     radius: 500,
 
-    type: ['cafe','night_club', 'library', 'bar', 'school', 'park']
+    type: ['cafe', 'library', 'bar', 'school', 'park']
 
-  }, callback);
+  }, resultsPlaces);
 
 
   directionsDisplay.setMap(map);
@@ -123,7 +123,7 @@ service.nearbySearch({
   location: new google.maps.LatLng(centerpoint[0], centerpoint[1]),
   radius: 500,
   type: ['cafe', 'library', 'bar', 'school', 'park']
-}, callback);
+}, createMarker);
 }
 
 $('.filter-categories').on('click', 'input', function(){
