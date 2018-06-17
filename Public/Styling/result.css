@@ -14,7 +14,6 @@ table {
 }
 
 footer {
-   position: inherit;
    bottom: 0;
    width: 100%;
 }
@@ -34,4 +33,10 @@ section.div {
 a2a_kit a2a_kit_size_32 a2a_default_style {
     position: absolute;
     display: inline;
+}
+
+#allTypes {
+    height: 200px;
+    width: 200px;
+    background: lightblue;
 }
