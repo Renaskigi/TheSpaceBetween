@@ -133,6 +133,11 @@ input#account-submit {
     font-size: 15px;
 }
 
+#welcomeLoggedIn {
+  text-align: center;
+  font-size: 46px;
+}
+
 /*form css*/
 
 form {

@@ -8,7 +8,7 @@ var updatedUrl = url + "mapPage";
 function sayHi() {
     if (localStorage.getItem("login")) {
         const login = JSON.parse(localStorage.getItem("login"));
-        $("#welcomeLoggedIn").html("Welcome back, " + login.username)
+        $("#welcomeLoggedIn").html("Welcome back, " + login.username +"!");
     }
 }
 
