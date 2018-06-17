@@ -1,7 +1,17 @@
 
-html { 
-    background: url(../images/mountains.png) no-repeat center center fixed; 
+html {
+    background: url(../images/mountains.png) no-repeat center center fixed;
     background-size: cover;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 14px;
+  text-align: center;
 }
 
 .filter-categories {
@@ -10,9 +20,13 @@ html {
 
 table {
   max-width: 90%;
-  text-align: center; 
+  text-align: center;
+  margin: auto;
 }
 
+#see-results {
+  
+}
 footer {
    bottom: 0;
    width: 100%;
