@@ -8,12 +8,14 @@ const app = express();
 // const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT';
 
 
-const conString = 'postgres://postgres@localhost:5432/spacebetween';
+const conString = 'postgres://postgres:Alchemy@localhost:5432/spacebetween';
 
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static( './Public' ) );
 app.use(cors());
 
@@ -38,7 +40,7 @@ app.listen(PORT, function() {
     console.log(`listening on ${PORT}`);
 });
 
-app.post( '/account', (request, response) => {
+app.post( '/new-account', (request, response) => {
     client.query(
       'INSERT INTO authentication(username, userpass) VALUES($1, $2) ON CONFLICT DO NOTHING',
       [request.body.username, request.body.userpass]
@@ -48,7 +50,16 @@ app.post( '/account', (request, response) => {
 });
 
 app.get('/account', function (request, response) {
-    response.sendFile( 'account.html', {root: './Public'});
+    response.sendFile("account.html",{root: './Public'})
+})
+
+app.post('/account', function (request, response) {
+    client.query(
+        'SELECT * FROM authentication WHERE username = $1 AND userpass = $2',
+        [request.body.username, request.body.userpass]
+    )
+    .then((results) => response.send(results.rows))
+    .catch(console.error)
 });
 
 // app.get('/account', (request, response) => {
