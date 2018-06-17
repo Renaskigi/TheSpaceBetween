@@ -26,7 +26,6 @@
             <li class="icon-profile"><a href="/account" data-tab="mapPage">Login</a></li>
             <li class="icon-wrench"><a href="/account" data-tab="resultPage">Create An Account</a></li>
           </ul>
-          <!-- <label class="account" for="form-toggle">Create Account</label> -->
       </nav>
     </div>
       <div class="create-account">
@@ -38,6 +37,7 @@
           </form>
         </div>
   </div>
+  <div id="welcomeLoggedIn"></div>
   <main>
     <section id="input-address">
       <form id="address">
@@ -46,45 +46,12 @@
         <input class="addr" id="addr-second" type="text" name="second" placeholder="Enter Address"><br>
         <input class="addr" id="addr-submit" type="submit" value="Submit">
       </form>
-
-
-
-
-    <!-- </section>
-    <section id="options">
-      <h5>Select Preferred Establishments</h5>
-        <form id="checkbox-options">
-          <div id="left-options">
-            <input type="checkbox" id="coffee" name="option" value="coffee">
-            <label for="coffee">Coffee</label><br>
-            <input type="checkbox" id="restaurant" name="options" value="restaurant">
-            <label for="restaurant">Restaurant</label><br>
-            <input type="checkbox" id="library" name="options" value="library">
-            <label for="library">Library</label><br>
-            <input type="checkbox" id="hotel" name="options" value="hotel">
-            <label for="hotel">Hotel</label>
-          </div>
-          <div id="right-options">
-            <input type="checkbox" id="gas" name="options" value="gas">
-            <label for="gas">Gas</label><br>
-            <input type="checkbox" id="grocery" name="options" value="grocery">
-            <label for="grocery">Grocery</label><br>
-            <input type="checkbox" id="park" name="options" value="park">
-            <label for="park">Park</label><br>
-            <input type="checkbox" id="bar" name="options" value="bar">
-            <label for="bar">Bar</label>
-          </div>
-        </form>
-    </section> -->
   </main>
 </body>
 <script type="text/javascript" src= "https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<!-- <script src="/vendor/scripts/page.js"></script> -->
 <script type="text/javascript" src= "config"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9RhI2XAtoSBUZXkxnbHrhojb2rhuufmM&libraries=geometry,places&sensor=false&callback=setGoogleListener"></script>
-
 <script async defer id="api-key" type="text/javascript"></script>
-
 <script type="text/javascript" src= "Scripts/Views/app.js"></script>
 </html>

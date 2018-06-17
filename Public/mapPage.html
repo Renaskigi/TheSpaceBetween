@@ -8,62 +8,36 @@
     <link rel="stylesheet" href="Styling/result.css" type="text/css">
     <link rel="stylesheet" href="Styling/fonts/style.css" type="text/css">
     <title>Map Page</title>
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-        #map {
-          height: 30em;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-          height: 20em;
-          margin: .5em;
-          padding: .5em;
-        }
-      </style>
 </head>
 <body>
+
   <header>
-    <h3>Map Results</h3>
-    <h5>Use the menu below to filter your results!</h5>
+    <h1>MAP RESULTS</h1>
+    <h3>Use the menu below to filter your results!</h3>
   </header>
     <!-- <div id="map"></div> -->
+    <div id="table">
+      <table border="5px" cellpadding="10px" cellspacing="3">
+          <tr>
+              <td colspan="2">
+                  <div id="dvDistance">
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div id="map" style="width: 750px; height: 750px">
+                  </div>
+              </td>
 
-    <table border="5px" cellpadding="10px" cellspacing="3">
-        <tr>
-            <td colspan="2">
-                <div id="dvDistance">
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div id="map" style="width: 500px; height: 500px">
-                </div>
-            </td>
-
-    </br>
-            </td>
-        </tr>
-        </table>
-
-        <div>
-            <form>
-
-
-                <a href = "/resultPage.html">See Results</a>
-
-
-              </form>
-
-        </div>
-        <!--options menu to filtwer with-->
+      </br>
+      <td>
         <div id="filter">
           <select id="allTypes" multiple="multiple" class="case btn btn-default">
             <option name="mytype" class="case" id="school"  value="school">School</option>
             <option  name="mytype" class="case" id="restaurant"  value="restaurant"/><label for="restaurant">Restaurant</option>
             <option name="mytype" class="case"  id="hospital"  value="hospital"/><label for="hospital">Hospital</option>
-            <option  name="mytype"  class="case" id="bus_station"  value="bus_station"/><label for="bus_station">Bus Stopedge</option>
+            <option  name="mytype"  class="case" id="bus_station"  value="bus_station"/><label for="bus_station">Bus Stop</option>
             <option name="mytype"  class="case" id="park"  value="park"/><label for="park">Park</option>
             <option name="mytype"  class="case" id="bank"  value="bank">Bank</option>
             <option  name="mytype"  class="case" id="bar"  value="bar"/><label for="restaurant">Bar</option>
@@ -71,12 +45,25 @@
             <option  name="mytype"  class="case" id="night_club"  value="night_club"/><label for="bus_station">Night Club</option>
             <option name="mytype"  class="case" id="zoo"  value="zoo"/><label for="park">Zoo</option>
             <option name="mytype"  class="case" id="gym"  value="gym">Gym</option>
-            <option  name="mytype"  class="case" id="atm"  value="atm"/><label for="restaurant">ATM</option>
-            <option name="mytype"  class="case" id="spa"  value="spa"/><label for="movie_theater">SPA</option>
             </select>
           </div>
+          <form>
+              <a id="see-results" href = "/resultPage.html">See Results</a>
+          </form>
+        </td>
+          </tr>
+          </table>
+        </div>
 
 
+        <!--options menu to filtwer with-->
+
+
+
+
+
+
+    </select>
 
     <footer>
             <h3>&copy; The | Space | Between </h3>
