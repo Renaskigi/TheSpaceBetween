@@ -4,19 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Styling/account.css">
+    <link rel="stylesheet" href="Styling/icon.css">
     <title>Document</title>
 </head>
 <body>
-    <p>SIGNUP PAGE</p>
+    <header>
+      <p>ACCOUNT PAGE</p>
+    </header>
 
+    <div id="nav">
+        <nav class="main-nav">
+          <label class="icon-menu" for="menu-toggle"></label>
+          <input id="menu-toggle" type="checkbox">
+            <ul id="main-menu">
+              <li class="icon-home2"><a href="/" data-tab="home">Home</a></li>
+              <li class="icon-profile"><a href="/account" data-tab="mapPage">Login</a></li>
+              <li class="icon-wrench"><a href="/account" data-tab="resultPage">Create An Account</a></li>
+            </ul>
+            <!-- <label class="account" for="form-toggle">Create Account</label> -->
+        </nav>
+      </div>
+      <br>
+
+    <div class="login">
+      <h3>Already have an account? Login!</h3>
+          <!-- <input id="form-toggle" type="checkbox"> -->
+      <form id="account-form">
+        <input class="info" id="account-username" type="text" name="username" placeholder="Username">
+        <input class="info" id="account-userpass" type="text" name="password" placeholder="Password"><br>
+        <input class="info" id="account-submit" type="submit" value="Login">
+      </form>
+    </div>
     <div class="create-account">
+      <br><br><br>
+      <h3>Create an account!</h3>
         <!-- <input id="form-toggle" type="checkbox"> -->
           <form id="account-form">
             <input class="info" id="account-username" type="text" name="username" placeholder="Username">
             <input class="info" id="account-userpass" type="text" name="password" placeholder="Password"><br>
             <input class="info" id="account-submit" type="submit" value="Submit">
           </form>
-        </div>
+      </div>
+
 </body>
 <script type="text/javascript" src= "https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <!-- <script src="/vendor/scripts/page.js"></script> -->

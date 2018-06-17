@@ -1,0 +1,97 @@
+html {
+  background: url(../images/mountains.png) no-repeat center center fixed;
+  background-size: cover;
+}
+
+p {
+  font-size: 140px;
+  text-align: center;
+}
+
+.create-account {
+  text-align: center;
+}
+
+.login {
+  text-align: center;
+}
+
+.info {
+  font-Size: 125%;
+}
+
+#nav {
+  display: flex;
+  margin-left: 20px;
+}
+
+.icon-menu {
+  font-size: 15px;
+  border: 1px solid black;
+  background-color: #fbecac;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked + #main-menu {
+  max-height: 110px;
+}
+
+.main-nav .icon-menu:hover + ul {
+  display: flex;
+}
+
+.main-nav ul {
+  display: left;
+  flex-direction: column;
+  list-style-type: none;
+  color: black;
+}
+
+
+#main-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: auto;
+  color: black;
+  font-size: 13px;
+  padding: 10px;
+}
+
+.main-nav a {
+  padding: 5px;
+  font-size:  13px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+#nav-sections {
+  display: flex;
+}
+
+header p {
+  margin: 0px;
+}
+
+h3 {
+  font-size: 23px;
+    background-color: #e8d8d8db;
+    width: 30%;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+form {
+  margin: 25px;
+  margin-bottom: 30px;
+}

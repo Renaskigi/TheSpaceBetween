@@ -10,38 +10,63 @@
     <title>Map Page</title>
 </head>
 <body>
+
+  <header>
+    <h3>Map Results</h3>
+    <h5>Use the menu below to filter your results!</h5>
+  </header>
+    <!-- <div id="map"></div> -->
+
     <table border="5px" cellpadding="10px" cellspacing="3">
         
             <th id="dvDistance"></th>
             <td>
-                <div id="map" style="width: 500px; height: 500px"></div>
+
+                <div id="map" style="width: 500px; height: 500px">
+                </div>
             </td>
-    <div>
-        <form>
-            <a href = "/resultPage.html">Click Me</a>
-            <input id="selections" type="submit" value="Refresh Map">
-        </form>
-    </div>
-    <select id="allTypes" multiple="multiple" class="case btn btn-default">
 
-        <option name="mytype" class="case" id="school"  value="school">School</option>
-        <option  name="mytype" class="case" id="restaurant"  value="restaurant"/><label for="restaurant">Restaurant</option>
-        <option name="mytype" class="case"  id="hospital"  value="hospital"/><label for="hospital">Hospital</option>
-        <option  name="mytype"  class="case" id="bus_station"  value="bus_station"/><label for="bus_station">Bus Stopedge</option>
-        <option name="mytype"  class="case" id="park"  value="park"/><label for="park">Park</option>
+    </br>
+            </td>
+        </tr>
+        </table>
+
+        <div>
+            <form>
 
 
-        <option name="mytype"  class="case" id="bank"  value="bank">Bank</option>
-        <option  name="mytype"  class="case" id="bar"  value="bar"/><label for="restaurant">Bar</option>
-        <option name="mytype"  class="case" id="movie_theater"  value="movie_theater"/><label for="movie_theater">Movie Theatre</option>
-        <option  name="mytype"  class="case" id="night_club"  value="night_club"/><label for="bus_station">Night Club</option>
-        <option name="mytype"  class="case" id="zoo"  value="zoo"/><label for="park">Zoo</option>
+                <a href = "/resultPage.html">See Results</a>
 
-        <option name="mytype"  class="case" id="gym"  value="gym">Gym</option>
-        <option  name="mytype"  class="case" id="atm"  value="atm"/><label for="restaurant">ATM</option>
-        <option name="mytype"  class="case" id="spa"  value="spa"/><label for="movie_theater">SPA</option>
+
+              </form>
+
+        </div>
+        <!--options menu to filtwer with-->
+        <div id="filter">
+          <select id="allTypes" multiple="multiple" class="case btn btn-default">
+            <option name="mytype" class="case" id="school"  value="school">School</option>
+            <option  name="mytype" class="case" id="restaurant"  value="restaurant"/><label for="restaurant">Restaurant</option>
+            <option name="mytype" class="case"  id="hospital"  value="hospital"/><label for="hospital">Hospital</option>
+            <option  name="mytype"  class="case" id="bus_station"  value="bus_station"/><label for="bus_station">Bus Stopedge</option>
+            <option name="mytype"  class="case" id="park"  value="park"/><label for="park">Park</option>
+            <option name="mytype"  class="case" id="bank"  value="bank">Bank</option>
+            <option  name="mytype"  class="case" id="bar"  value="bar"/><label for="restaurant">Bar</option>
+            <option name="mytype"  class="case" id="movie_theater"  value="movie_theater"/><label for="movie_theater">Movie Theatre</option>
+            <option  name="mytype"  class="case" id="night_club"  value="night_club"/><label for="bus_station">Night Club</option>
+            <option name="mytype"  class="case" id="zoo"  value="zoo"/><label for="park">Zoo</option>
+            <option name="mytype"  class="case" id="gym"  value="gym">Gym</option>
+            <option  name="mytype"  class="case" id="atm"  value="atm"/><label for="restaurant">ATM</option>
+            <option name="mytype"  class="case" id="spa"  value="spa"/><label for="movie_theater">SPA</option>
+            </select>
+          </div>
+
+
+
+
+
     
     </select>
+
     <footer>
             <h3>&copy; The | Space | Between </h3>
     </footer>
@@ -52,7 +77,7 @@
     type="text/javascript"></script>
     <script type="text/javascript" src= "Scripts/Views/places.js"></script>
     <script type="text/javascript" src= "Scripts/Views/home.js"></script>
-    
+
 
 </body>
 </html>
