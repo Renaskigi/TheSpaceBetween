@@ -25,8 +25,16 @@ table {
 }
 
 #see-results {
-  
+  background-color: #8e88b7c4;
+  font-size: 30px;
+  color: white;
 }
+
+.case {
+  background-color: #8e88b7c4;
+  opacity: 4;
+}
+
 footer {
     position: fixed;
     bottom:0;
@@ -69,6 +77,6 @@ html, body {
     padding: .5em;
   }
 #dvDistance {
-    background-color: greenyellow;
+    background-color: #8e88b7c4;
     opacity: 4;
 }
