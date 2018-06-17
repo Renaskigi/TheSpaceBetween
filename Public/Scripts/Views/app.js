@@ -4,8 +4,6 @@ let address = {};
 var url = window.location.href;
 var updatedUrl = url + "mapPage";
 
-// var config = api.key;
-
 
 function setGoogleListener () {
     console.log("Adding google listener...");
@@ -34,7 +32,6 @@ function autocomplete() {
       var mesg = "Address: " + address;
       mesg += "\nLatitude: " + latitude;
       mesg += "\nLongitude: " + longitude;
-    //   alert(mesg);
   });
 }
 function getCoordinates () {
